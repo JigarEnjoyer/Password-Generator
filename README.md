@@ -18,7 +18,7 @@ Go to [Releases](https://github.com/JigarEnjoyer/Password-Generator/releases) an
 ## Run from source:
 
 1. Clone repository
-  git clone https://github.com/JigarEnjoyer/Password-Generator.git or git@github.com:JigarEnjoyer/Password-Generator.git
+  git clone https://github.com/JigarEnjoyer/Password-Generator.git
   cd Password-Generator
 
 2. Install dependency
