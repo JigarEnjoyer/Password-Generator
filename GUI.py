@@ -31,7 +31,7 @@ class PasswordGeneratorGUI:
 
         # Exclude ambiguous characters option
         self.excludeAmbiguousVar = tk.BooleanVar(value=False)
-        tk.Checkbutton(root, text="Exclude Ambiguous Characters", variable=self.excludeAmbiguousVar).grid(row=5, columnspan=2, sticky='w', padx=10, pady=5)
+        tk.Checkbutton(root, text="Exclude Ambiguous Characters {}}[]()/\'\"`~,;:.<>", variable=self.excludeAmbiguousVar).grid(row=5, columnspan=2, sticky='w', padx=10, pady=5)
 
         # Minimum numbers label and option
         tk.Label(root, text="Minimum Numbers:").grid(row=6, column=0, sticky='w', padx=10, pady=5)
