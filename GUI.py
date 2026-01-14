@@ -9,7 +9,7 @@ class PasswordGeneratorGUI:
         self.root.title("Password Generator")  # Set the window title
 
         # Set the window size to make the app screen bigger
-        self.root.geometry("775x650")  # Width x Height
+        self.root.geometry("500x500")  # Width x Height
 
         # Password length
         tk.Label(root, text="Password Length:").grid(row=0, column=0, sticky='w', padx=10, pady=5)
