@@ -17,16 +17,15 @@ Go to [Releases](https://github.com/JigarEnjoyer/Password-Generator/releases) an
 
 ## Run from source:
 
-1. Clone repository
-  git clone https://github.com/JigarEnjoyer/Password-Generator.git
+# 1. Clone repository
+    git clone https://github.com/JigarEnjoyer/Password-Generator.git
+    cd Password-Generator
 
-  cd Password-Generator
+# 2. Install dependency
+     pip install -r requirements.txt
 
-3. Install dependency
-   pip install -r requirements.txt
-   
-4. Run the app
-   python Main.py
+# 3. Run the app
+     python Main.py
 
 ## Contributing:
 
