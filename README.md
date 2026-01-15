@@ -8,7 +8,6 @@ A simple-to-use, local, and open-sourced password generator built using Python.
 - Create random passwords from 4 to 64 characters (Default is 12)
 - Add complexity by adding symbols, numbers, and upper/lower characters
 - Exclude certain symbols that are not supported widely for passwords: {}}[]()/\'\"`~,;:.<>
-- Small file size (~12KB)
 
 ## Installation:
 
