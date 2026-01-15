@@ -31,16 +31,16 @@ class PasswordGeneratorGUI:
 
         # Exclude ambiguous characters option
         self.excludeAmbiguousVar = tk.BooleanVar(value=False)
-        tk.Checkbutton(root, text="Exclude Ambiguous Characters {}}[]()/\'\"`~,;:.<>", variable=self.excludeAmbiguousVar).grid(row=5, columnspan=2, sticky='w', padx=10, pady=5)
+        tk.Checkbutton(root, text="Exclude Ambiguous Characters {}[]()/\'\"`~,;:.<>", variable=self.excludeAmbiguousVar).grid(row=5, columnspan=2, sticky='w', padx=10, pady=5)
 
         # Minimum numbers label and option
         tk.Label(root, text="Minimum Numbers:").grid(row=6, column=0, sticky='w', padx=10, pady=5)
-        self.minNumVar = tk.IntVar(value=0)
+        self.minNumVar = tk.IntVar(value=1)
         tk.Spinbox(root, from_=0, to=10, textvariable=self.minNumVar).grid(row=6, column=1, padx=10, pady=5)
 
         # Minimum symbols label and option
         tk.Label(root, text="Minimum Symbols:").grid(row=7, column=0, sticky='w', padx=10, pady=5)
-        self.minSymbolVar = tk.IntVar(value=0)
+        self.minSymbolVar = tk.IntVar(value=1)
         tk.Spinbox(root, from_=0, to=10, textvariable=self.minSymbolVar).grid(row=7, column=1, padx=10, pady=5)
 
         # Password display

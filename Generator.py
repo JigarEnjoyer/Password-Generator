@@ -3,7 +3,7 @@ import string
 from tkinter import messagebox # For popup messages
 
 class PasswordGenerator:
-    def __init__(self, length=12, useUppercase = True, useLowercase = True, useNums = True, useSymbols = True, excludeAmbiguous = False, minSymbolLength = 0, minNumLength = 0):
+    def __init__(self, length=12, useUppercase = True, useLowercase = True, useNums = True, useSymbols = True, excludeAmbiguous = False, minSymbolLength = 1, minNumLength = 1):
         self.length = length # Password length
         self.useUppercase = useUppercase # Uppercase letters
         self.useLowercase = useLowercase # Lowercase letters
@@ -15,7 +15,7 @@ class PasswordGenerator:
 
     def generate(self):
         allChars = "" # Initialize empty character pool
-        ambiguousChars = "{}}[]()/\'\"`~,;:.<>" # Define ambiguous characters
+        ambiguousChars = "{}[]()/\'\"`~,;:.<>" # Define ambiguous characters
 
         # If a user picks an option, add those characters to the pool
         if self.useUppercase:
@@ -39,11 +39,22 @@ class PasswordGenerator:
         
         # Add user defined minimum number of special characters
         if self.minSymbolLength > 0:
-            password.extend(random.choice(string.punctuation) for _ in range(self.minSymbolLength))
+            if self.useSymbols == False:
+                messagebox.showerror("Error", "Minimum symbols specified but 'Include Symbols' option is not selected.") # Show error if symbols not selected but min symbols > 0
+                return None
+            elif self.excludeAmbiguous: # Exclude ambiguous characters if option is selected
+                    filteredSymbols = ''.join(c for c in string.punctuation if c not in ambiguousChars)
+                    password.extend(random.choice(filteredSymbols) for _ in range(self.minSymbolLength))
+            else:
+                password.extend(random.choice(string.punctuation) for _ in range(self.minSymbolLength)) # Add symbols
         
         # Add user defined minimum number of digits
         if self.minNumLength > 0:
-            password.extend(random.choice(string.digits) for _ in range(self.minNumLength))
+            if self.useNums == False:
+                messagebox.showerror("Error", "Minimum numbers specified but 'Include Numbers' option is not selected.") # Show error if numbers not selected but min numbers > 0
+                return None
+            else:
+                password.extend(random.choice(string.digits) for _ in range(self.minNumLength))
 
         # Fill the rest of the password length with random choices from the pool
         remainingLength = self.length - len(password)
